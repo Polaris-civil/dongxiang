@@ -3,149 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>向栋 | 个人主页</title>
+    <title>数字包围的球体</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
         }
-        header {
-            background: #007BFF;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
+
+        .sphere {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0));
+            border-radius: 50%;
+            box-shadow: 0 0 100px rgba(0, 123, 255, 0.8);
+            animation: rotateSphere 10s linear infinite;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
+
+        .sphere::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            background: radial-gradient(circle, rgba(0, 123, 255, 0.4), transparent);
+            border-radius: 50%;
+            z-index: 1;
         }
-        header p {
-            margin: 5px 0 0;
-            font-size: 1.2em;
+
+        .sphere span {
+            position: absolute;
+            font-size: 16px;
+            color: rgba(0, 180, 255, 0.8);
+            text-shadow: 0 0 10px rgba(0, 180, 255, 0.8);
+            transform-origin: 150px;
+            animation: rotateNumbers 10s linear infinite;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        @keyframes rotateSphere {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
-        section {
-            margin-bottom: 30px;
+
+        @keyframes rotateNumbers {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
         }
-        section h2 {
-            border-bottom: 2px solid #007BFF;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            color: #007BFF;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 10px 0;
-            background: #007BFF;
-            color: white;
-        }
+
+        /* Generate numbers around the sphere */
+        .sphere span:nth-child(1) { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+        .sphere span:nth-child(2) { transform: rotate(12deg) translateX(150px) rotate(-12deg); }
+        .sphere span:nth-child(3) { transform: rotate(24deg) translateX(150px) rotate(-24deg); }
+        .sphere span:nth-child(4) { transform: rotate(36deg) translateX(150px) rotate(-36deg); }
+        .sphere span:nth-child(5) { transform: rotate(48deg) translateX(150px) rotate(-48deg); }
+        .sphere span:nth-child(6) { transform: rotate(60deg) translateX(150px) rotate(-60deg); }
+        .sphere span:nth-child(7) { transform: rotate(72deg) translateX(150px) rotate(-72deg); }
+        .sphere span:nth-child(8) { transform: rotate(84deg) translateX(150px) rotate(-84deg); }
+        .sphere span:nth-child(9) { transform: rotate(96deg) translateX(150px) rotate(-96deg); }
+        .sphere span:nth-child(10) { transform: rotate(108deg) translateX(150px) rotate(-108deg); }
+        .sphere span:nth-child(11) { transform: rotate(120deg) translateX(150px) rotate(-120deg); }
+        .sphere span:nth-child(12) { transform: rotate(132deg) translateX(150px) rotate(-132deg); }
+        .sphere span:nth-child(13) { transform: rotate(144deg) translateX(150px) rotate(-144deg); }
+        .sphere span:nth-child(14) { transform: rotate(156deg) translateX(150px) rotate(-156deg); }
+        .sphere span:nth-child(15) { transform: rotate(168deg) translateX(150px) rotate(-168deg); }
+        .sphere span:nth-child(16) { transform: rotate(180deg) translateX(150px) rotate(-180deg); }
+        .sphere span:nth-child(17) { transform: rotate(192deg) translateX(150px) rotate(-192deg); }
+        .sphere span:nth-child(18) { transform: rotate(204deg) translateX(150px) rotate(-204deg); }
+        .sphere span:nth-child(19) { transform: rotate(216deg) translateX(150px) rotate(-216deg); }
+        .sphere span:nth-child(20) { transform: rotate(228deg) translateX(150px) rotate(-228deg); }
+        .sphere span:nth-child(21) { transform: rotate(240deg) translateX(150px) rotate(-240deg); }
+        .sphere span:nth-child(22) { transform: rotate(252deg) translateX(150px) rotate(-252deg); }
+        .sphere span:nth-child(23) { transform: rotate(264deg) translateX(150px) rotate(-264deg); }
+        .sphere span:nth-child(24) { transform: rotate(276deg) translateX(150px) rotate(-276deg); }
+        .sphere span:nth-child(25) { transform: rotate(288deg) translateX(150px) rotate(-288deg); }
+        .sphere span:nth-child(26) { transform: rotate(300deg) translateX(150px) rotate(-300deg); }
+        .sphere span:nth-child(27) { transform: rotate(312deg) translateX(150px) rotate(-312deg); }
+        .sphere span:nth-child(28) { transform: rotate(324deg) translateX(150px) rotate(-324deg); }
+        .sphere span:nth-child(29) { transform: rotate(336deg) translateX(150px) rotate(-336deg); }
+        .sphere span:nth-child(30) { transform: rotate(348deg) translateX(150px) rotate(-348deg); }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>向栋</h1>
-        <p>细心从每一个小细节开始</p>
-    </header>
-
-    <div class="container">
-
-        <section>
-            <h2>基本信息</h2>
-            <ul>
-                <li><strong>姓名:</strong> 向栋</li>
-                <li><strong>性别:</strong> 男</li>
-                <li><strong>出生年月:</strong> 2002年5月</li>
-                <li><strong>民族:</strong> 汉族</li>
-                <li><strong>籍贯:</strong> 湖北黄冈</li>
-                <li><strong>政治面貌:</strong> 中共党员</li>
-                <li><strong>电话:</strong> <a href="tel:18371370950">18371370950</a></li>
-                <li><strong>邮箱:</strong> <a href="mailto:480832957@qq.com">480832957@qq.com</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>教育背景</h2>
-            <p><strong>中国矿业大学 | 土木工程（本科）</strong><br>
-            2020年9月 - 至今<br>
-            绩点：3.81 | 英语水平：CET4 (486分)<br>
-            计算机水平：熟练掌握 Microsoft Office、AutoCAD、ImageJ、Matlab，熟悉 Python 编程语言<br>
-            主修课程：混凝土结构设计原理、钢结构设计原理、土力学、地基与基础工程、岩土工程勘察、地下空间规划与设计、地下工程施工技术、地下结构设计、岩土特殊施工</p>
-        </section>
-
-        <section>
-            <h2>荣誉与奖项</h2>
-            <ul>
-                <li>2020年10月 力学与土木工程学院“军训先进个人”</li>
-                <li>Lscat江苏省笔译大赛三等奖</li>
-                <li>2022年2月 全国大学生英语竞赛最佳志愿者称号</li>
-                <li>普译奖全国大学生翻译比赛三等奖</li>
-                <li>2022年5月 力学与土木工程学院“优秀共青团员”</li>
-                <li>2022年9月 力学与土木工程学院“社会实践先进个人”</li>
-                <li>2022年10月 力学与土木工程学院“优秀班干部”</li>
-                <li>2022年10月 中国矿业大学“一等奖学金”</li>
-                <li>2022年12月 校级优秀学生荣誉称号</li>
-                <li>2023年5月 中国矿业大学“优秀共青团员”及“优秀共青团干部”</li>
-                <li>2023年10月 中国矿业大学“一等奖学金”</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>科研经历</h2>
-            <ul>
-                <li>大学生创新创业项目，校级，成员，《新型二维材料 MXene 的典型力学行为研究》，参与并结项</li>
-                <li>大学生创新创业项目，省级，第一负责人，《利用 DPDM 分析级配碎石以调整 TBM 掘进参数》，主持并结项</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>学生工作</h2>
-            <ul>
-                <li>中国矿业大学校团委管乐团主席 | 2022年9月 - 2023年7月</li>
-                <li>中国矿业大学班级学习委员 | 2021年9月 - 2023年7月</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>社会实践</h2>
-            <ul>
-                <li>三下乡暑期红色社会实践 | 2021年7月 - 2021年9月</li>
-                <li>“一起云支教•携手创未来”全国大学生暑期返家乡社会实践专项活动 | 2022年7月 - 2022年9月</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>个人评价</h2>
-            <p>本人好学上进，诚信、敬业、责任心强，有强烈的团队精神，对工作认真积极，严谨负责。</p>
-        </section>
-
+    <div class="sphere">
+        <!-- Numbers surrounding the sphere -->
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>10</span>
+        <span>11</span>
+        <span>12</span>
+        <span>13</span>
+        <span>14</span>
+        <span>15</span>
+        <span>16</span>
+        <span>17</span>
+        <span>18</span>
+        <span>19</span>
+        <span>20</span>
+        <span>21</span>
+        <span>22</span>
+        <span>23</span>
+        <span>24</span>
+        <span>25</span>
+        <span>26</span>
+        <span>27</span>
+        <span>28</span>
+        <span>29</span>
+        <span>30</span>
     </div>
-
-    <footer>
-        联系我：<a href="tel:18371370950">18371370950</a> | <a href="mailto:480832957@qq.com">480832957@qq.com</a>
-    </footer>
-
 </body>
 </html>
